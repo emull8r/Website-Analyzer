@@ -1,0 +1,70 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:5.1.0"
+    }
+}
+
+apply plugin: "com.github.johnrengelman.shadow"
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "application"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	testCompile "junit:junit:4.12"
+	testCompile "org.hamcrest:hamcrest-library:1.3"
+	compile "org.jsoup:jsoup:1.12.1"
+	compile "org.apache.poi:poi:3.12+"
+	compile "org.apache.poi:poi-ooxml:3.12+"
+	runtime "org.jsoup:jsoup:1.12.1"
+}
+
+shadowJar {
+   baseName = "WebsiteAnalyzer"
+   classifier = null
+   version = null
+}
+
+jar {
+	baseName = "WebsiteAnalyzerSmall"
+    manifest {
+        attributes(
+          "Main-Class": "edu.odu.cs.websiteanalyzer.Console"
+        )
+    }
+}
+
+test {
+
+	ignoreFailures = true
+
+	testLogging{
+		events "passed","skipped","failed","standardOut","standardError"
+
+		reports {
+			html.enabled = true
+		}
+	}
+	
+}
+
+javadoc {
+    failOnError false    
+}
+
+application {
+	mainClassName = 'edu.odu.cs.websiteanalyzer.Console'
+
+}
+
+
+

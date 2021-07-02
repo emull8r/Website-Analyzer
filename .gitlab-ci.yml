@@ -1,0 +1,31 @@
+stages:
+  - build
+  - system
+
+build-job:
+  tags:
+    - WebsiteAnalyzer
+  stage: build
+  script:
+    - chmod +x gradlew
+    - ./gradlew --no-daemon build
+  only:
+    - master
+  artifacts:
+    paths:
+      - ./build
+      
+system-job:
+  tags:
+    - WebsiteAnalyzer
+  stage: system
+  script:
+    - java -jar build/libs/WebsiteAnalyzer.jar
+    - java -jar build/libs/WebsiteAnalyzer.jar src/test/data/testsite/
+    - java -jar build/libs/WebsiteAnalyzer.jar src/test/data/testsite/ htp://www.malformedurl.com
+    - java -jar build/libs/WebsiteAnalyzer.jar src/test/data/misspelledsite/ http://www.testsite.net https://www.cs.testsite.net
+    - java -jar build/libs/WebsiteAnalyzer.jar src/test/data/emptysite/ http://www.testsite.net https://www.cs.testsite.net
+    - java -jar build/libs/WebsiteAnalyzer.jar src/test/data/testsite/ http://www.testsite.net https://www.cs.testsite.net
+    
+      
+ 

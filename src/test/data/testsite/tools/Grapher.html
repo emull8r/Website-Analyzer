@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>something</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" type="text/css" href="https://www.cs.odu.edu/~emulloy/cs350/sshAsst/Test_Style.css" />
+<link rel="stylesheet" type="text/css" href="https://www.cs.odu.edu/~emulloy/cs350/sshAsst/Test_Style.css" />
+
+<style>
+canvas#myCanvas {
+  width: 800px;
+  height: 600px;
+  border: 1px solid #d3d3d3;
+}
+</style>
+
+</head>
+<body>
+
+
+<canvas id="myCanvas">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+
+<form id="form">
+<input type="text" id="x" name="x" value="100"></input><input type="text" id="y" name="y" value="100"></input>
+
+
+</form>
+
+<button onclick="draw()">Draw</button>
+
+<button onclick="doClear()">Clear</button>
+
+<script src="../scripts/Grapher.js"/></script>
+<script src="https://www.cs.odu.edu/~emulloy/cs350/sshAsst/doSomething.js"/></script>
+<script src="../scripts/Grapher.js"/></script>
+<script src="https://www.cs.odu.edu/~emulloy/cs350/sshAsst/doSomething.js"/></script>
+
+
+<script>
+
+function doHello() {
+
+document.getElementByName("hello").innerHtml = "hello";
+
+
+}
+
+</script>
+
+<p id="result" name="hello"></p>
+
+<p id="other_result" name="something"></p>
+
+<button onclick="doSomething()">Result 1</button>
+<button onclick="doHello()">Result 2</button>
+
+</body>
+</html>

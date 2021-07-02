@@ -1,0 +1,575 @@
+﻿/*----------------------------------------*
+ *                                        *
+ *  Evan Mulloy, AKA Bricknave, 2011-now  *
+ *                                        *
+ *----------------------------------------*/
+
+
+/* THE BASICS (body, links, headings etc.)
+-------------------------------------------------*/
+
+body
+{
+background-color: #ffffff;
+background-image: url('pics/background.png');
+background-attachment: fixed;
+width: auto;
+height: auto;
+min-height: 100%;
+
+Font-Size: 12pt;
+Font-Family: "Trebuchet MS", Helvetica, sans-serif;
+Font-Weight: 100;
+color: #000000;
+Line-Height: normal;
+}
+
+a:link
+{
+color: #0404B4;
+}
+
+a:visited
+{
+color: #0404B4;
+}
+
+a:hover
+{
+color: #0174DF;
+text-decoration: underline;
+}
+
+a:active
+{
+color: #0174DF;
+}
+
+p
+{
+line-height: normal;
+margin: auto;
+left: auto;
+right: auto;
+text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+color: #000000;
+font-variant: small-caps;
+text-transform: none;
+font-weight: 100;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+margin: auto;
+left: auto;
+right: auto;
+position: relative;
+}
+h1
+{
+font-size: 1.6em;
+}
+h2
+{
+font-size: 1.5em;
+}
+h3
+{
+font-size: 1.4em;
+}
+h4
+{
+font-size: 1.3em;
+}
+h5
+{
+font-size: 1.2em;
+}
+h6
+{
+font-size: 1.1em;
+}
+b
+{
+font-size: 1.3em;
+}
+
+img
+{
+width:auto;
+min-width: 0px;
+max-width: 40%;
+height:auto;
+position: relative;
+left: auto;
+right: auto;
+margin: auto;
+margin-bottom: 2%;
+border: 15px solid transparent;
+padding: 0px 0px 0px 0px;
+background-color: #ffffff;
+border-image: url('pics/imageFrame.png') 30 30;
+box-shadow: 20px 20px 10px 3px #888888;
+display: block;
+}
+
+a img
+{
+border: none;
+padding: none;
+border-image: none;
+box-shadow: none;
+background: none;
+display: inline;
+}
+
+table
+{
+line-height: normal;
+margin: auto;
+left: auto;
+right: auto;
+text-align: center;
+}
+table tr td
+{
+margin: auto;
+padding: 15px 15px 15px 15px;
+}
+table tr td img
+{
+min-width: 50px;
+max-width: 200px;
+}
+
+form
+{
+margin: auto;
+left: auto;
+right: auto;
+text-align: center;
+}
+label
+{
+display: block;
+margin: 1% auto;
+}
+label img
+{
+box-shadow: none;
+border: none;
+position: relative;
+width: auto;
+height: 10%;
+}
+button
+{
+margin: auto;
+margin-top: 1%;
+}
+button img
+{
+box-shadow: none;
+border: none;
+max-width: none;
+width: auto;
+height: auto;
+min-width: 0px;
+max-width: 300px;
+}
+textarea
+{
+width: 40%;
+height: auto;
+}
+textarea:focus
+{
+border: 2px solid #555555;
+}
+input text
+{
+width: 15%;
+height: 15%;
+margin: auto;
+margin-bottom: 1%;
+}
+input:focus
+{
+border: 2px solid #555555;
+}
+footer
+{
+position: relative;
+text-align: center;
+margin: auto;
+margin-top: 10%;
+display: block;
+z-index: -1;
+}
+canvas
+{
+z-index: 1;
+position: fixed;
+}
+
+/* CLASSES (to spruce up the site)
+-----------------------------------------------*/
+
+/* HEADER */
+.header
+{
+height: 130px;
+width: auto;
+display: block;
+text-align: center;
+background-image: url('pics/shadow.png');
+background-position: center;
+background-repeat: no-repeat;
+background-size: 50% 100%;
+overflow: hidden;
+}
+.header img
+{
+width: auto;
+max-width: none;
+height: 100%;
+display: inline;
+position: relative;
+z-index: -1;
+border: none;
+padding: none;
+background-color: none;
+border-image: none;
+box-shadow: none;
+}
+
+.nav
+{
+position: relative;
+bottom: 20px;
+text-align: center;
+right: 1.3%;
+margin: auto;
+}
+.nav ul
+{
+list-style-type: none;
+text-align: center;
+display: inline-block;
+}
+.nav ul li
+{
+list-style-type: none;
+position: relative; /* Note to self: If this isn't relatively, all the nav bar tabs will be smooshed together */
+background-image: url('pics/imageFrame.png');
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+width: 140px;
+height: 40px;
+margin-left: 0px;
+margin-right: 0px;
+padding: 0px 0px 0px 0px;
+font-size: 1.2em;
+overflow: visible;
+display: inline-block;
+}
+.nav ul li a:link,a:visited
+{
+font-weight:bold;
+color:#ffffff;
+text-decoration: none;
+list-style-type: table-row;
+display: block;
+width: 100%;
+height: 100%;
+line-height: 40px;
+}
+.nav ul li a:hover,a:active
+{
+color: #000000;
+}
+/* Note to self: It is possible to change the background of the list when the mouse hovers over, but it might be too seizure-y.*/
+.nav ul li:hover
+{
+background-image: url('pics/frame.png');
+}
+
+/* LOWER NAVIGATION BAR */
+.links
+{
+position: relative;
+margin: auto;
+margin-top: 0px;
+left: auto;
+right: 1.6%;
+text-align: center;
+}
+.links ul
+{
+list-style-type: table-row;
+text-align: center;
+}
+.links ul li
+{
+list-style-type: table-row;
+display: inline;
+position: relative; /* Note to self: If this isn't relatively, all the nav bar tabs will be smooshed together */
+background-image: url('pics/imageFrame.png');
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+width: 100px;
+height: auto;
+margin-left: 0.5%;
+margin-right: 0.5%;
+padding: 0px 0px 0px 0px;
+font-size: 1.2em;
+overflow: visible;
+display: inline-block;
+}
+.links ul li a:link,a:visited
+{
+font-weight:bold;
+color:#ffffff;
+text-decoration: none;
+list-style-type: table-row;
+display: block;
+width: 100%;
+height: 100%;
+}
+.links ul li a:hover,a:active
+{
+color: #000000;
+}
+/* Note to self: It is possible to change the background of the list when the mouse hovers over, but it might be too seizure-y.*/
+.links ul li:hover
+{
+background-image: url('pics/frame.png');
+}
+/* MOC TABLE */
+.mocs
+{
+position: relative;
+left: auto;
+right: auto;
+width: 70%;
+height: auto;
+margin: auto;
+}
+.mocs tr
+{
+text-align: center;
+display: inline-block;
+}
+.mocs td
+{
+height: auto;
+width: auto;
+padding: auto;
+margin: auto;
+text-align: center;
+z-index: 0;
+}
+.mocs td img
+{
+position: relative;
+max-height: 200px;
+min-height: 100px;
+max-width: 200px;
+min-width: 100px;
+height: auto;
+width: auto;
+margin: 0px 5% 0px 5%;
+background-color: #ffffff;
+padding: 10px 10px 30px 10px;
+border-image: url('pics/imageFrame.png') 30 30;
+box-shadow: 10px 15px 10px 5px #888888;
+z-index: 0;
+}
+.mocs p
+{
+position: relative;
+bottom: 40px;
+color: #000000;
+z-index: 1;
+}
+.mocs td img:hover
+{
+min-width: 400px;
+max-width: 500px;
+min-height: 400px;
+max-height: 500px;
+z-index: 2;
+overflow: visible;
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+}
+/* Our definition of MENU: A list with an image in each cell, kind of a combination of the rest of the classes. */
+table.menu
+{
+margin: auto;
+padding: none;
+right: 1.3%;
+text-align: center;
+width: 100%;
+}
+table.menu tr
+{
+text-align: center;
+width: auto;
+height: auto;
+padding: auto;
+list-style-type: none;
+}
+table.menu  td
+{
+width: 40%;
+height: auto;
+margin: 0px 1% 0px 1%;
+padding: none;
+position: relative;
+display: inline;
+}
+table.menu  td img
+{
+width: 100%;
+height: 100%;
+border: 10px solid transparent;
+padding: 0px 0px 40px 0px;
+background-color: #ffffff;
+border-image: url('pics/imageFrame.png') 30 30;
+box-shadow: 20px 20px 10px 3px #888888;
+display: block;
+}
+table.menu  td a
+{
+color:#000000;
+text-decoration: none;
+margin: none;
+padding: none;
+display: inline-block;
+}
+table.menu  td p
+{
+position: absolute;
+top: -45%;
+left: 10%;
+margin: auto;
+display: block;
+text-align: center;
+width: 80%;
+}
+
+.aboutme
+{
+position: relative;
+right: 4%;
+bottom: 40px;
+margin: auto;
+text-align: center;
+}
+.aboutme tr, .aboutme td, .aboutme li, .aboutme ul
+{
+list-style-type: none;
+padding: 0px 5px 0px 5px;
+}
+.aboutme td a
+{
+color: #000099;
+}
+
+.followme
+{
+margin: auto;
+border-spacing: 0px 10px;
+}
+.followme tr
+{
+display: table-cell;
+margin-left: 30px;
+}
+.followme td
+{
+display: table-row;
+text-align: left;
+}
+.followme a
+{
+color: #000000;
+text-decoration: none;
+font-size: 1.1em;
+}
+.followme a:hover, a:active
+{
+color: #ffffff;
+}
+.followme td img
+{
+border: none;
+box-shadow: none;
+margin-top: -95%;
+margin-right: 10%;
+}
+
+div.content {
+	margin: auto;
+	width: 960px;
+}
+div.broken,
+div.missing {
+	margin: auto;
+	position: relative;
+	top: 50%;
+	width: 193px;
+}
+div.broken a,
+div.missing a {
+	height: 63px;
+	position: relative;
+	top: -31px;
+}
+div.broken img,
+div.missing img {
+	border-width: 0px;
+}
+div.broken {
+	display: none;
+}
+div#unityPlayer {
+	cursor: default;
+	height: 600px;
+	width: 960px;
+}
+
+a.link, a.link:visited
+{
+position: relative;
+margin: 50px 0px 0px 0px;
+color: #111111;
+text-decoration: none;
+}
+a.link:hover, a.link:active
+{
+color: #ffffff;
+text-decoration: underline;
+}
+
+img.showcase
+{
+max-width: 60%;
+min-width: 60%;
+
+bottom: 30px;
+
+border: 7px solid transparent;
+
+box-shadow: 10px 10px 10px 3px #888888;
+}
+
+textarea.contact
+{
+width: 40%;
+height: 300px;
+}
